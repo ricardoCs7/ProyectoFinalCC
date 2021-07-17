@@ -10,15 +10,26 @@ package modelo;
  * @author Ricardo
  */
 public class Funcion {
+    Pelicula pelicula;
     public String fecha;
     public int nroEntradas;
     public int precio;
 
-    public Funcion(String fecha, int nroEntradas, int precio) {
+    public Funcion(Pelicula pelicula, String fecha, int nroEntradas, int precio) {
+        this.pelicula = pelicula;
         this.fecha = fecha;
         this.nroEntradas = nroEntradas;
         this.precio = precio;
     }
+
+    public Pelicula getPelicula() {
+        return pelicula;
+    }
+
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
+    }
+
 
     public String getFecha() {
         return fecha;

@@ -45,8 +45,6 @@ public class ClienteController implements ActionListener {
         }
             
         }
-
-       
     }
 
     public void llenarComboBox() {

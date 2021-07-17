@@ -19,6 +19,22 @@ public class DoublyLinkedList {
     }
 // -------------------------------------------------------------
 
+    public Pelicula find(String key) // find link with given key
+    {                           // (assumes non-empty list)
+        Pelicula current = first;              // start at 'first'
+        while (current.titulo != key) // while no match,
+        {
+            if (current.next == null) // if end of list,
+            {
+                return null;                 // didn't find it
+            } else // not end of list,
+            {
+                current = current.next;      // go to next link
+            }
+        }
+        return current;                    // found it
+    }
+
     public void insertFirst(String titulo) // insert at front of list
     {
         Pelicula newLink = new Pelicula(titulo);   // make new link
@@ -145,7 +161,6 @@ public class DoublyLinkedList {
         System.out.println("");
     }
 
-    
 // -------------------------------------------------------------
     public void displayBackward() {
         System.out.println("List (last-->first): ");
@@ -157,10 +172,8 @@ public class DoublyLinkedList {
         }
         System.out.println("");
     }
-    
-    
-// -------------------------------------------------------------
 
+// -------------------------------------------------------------
     public Pelicula getFirst() {
         return first;
     }
