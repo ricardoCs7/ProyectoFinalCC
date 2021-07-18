@@ -7,6 +7,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import modelo.Cartelera;
 import modelo.StockPeliculas;
 import modelo.Funcion;
@@ -27,6 +28,7 @@ public class addFuncionController implements ActionListener {
     public addFuncionController(VistaAddFuncion vaf) {
         this.vaf = vaf;
         this.stockPeliculas = InicioController.stockPeliculas;
+        this.cartelera = InicioController.cartelera;
         llenarComboBox();
 
     }
@@ -35,16 +37,23 @@ public class addFuncionController implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         String comando = ae.getActionCommand();
 
-        if (comando == "crear") {
+        String fecha = vaf.getTfFecha().getText();
+        String precio = vaf.getTfPrecio().getText();
+        String titulo = (String) vaf.getJcPeliculas().getSelectedItem();
 
-            String fecha = vaf.getTfFecha().getText();
-            int precio = Integer.parseInt(vaf.getTfPrecio().getText());
-            String titulo = (String) vaf.getJcPeliculas().getSelectedItem();
+        if (comando == "cancelar") {
+            vaf.dispose();
+
+        } else if (comando == "crear" && fecha.isEmpty() || precio.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
+        } else {
 
             Pelicula p = stockPeliculas.getListadoPeliculas().find(titulo);
 
-            cartelera.getListadoFunciones().insertFirst(p, fecha, precio); //CAMBIARLO SEGUN SE HARA NODO, LINKLIST O ETC (COMO POR EJEM PELICULA QUE ESTA HECHO COM
-                                                               //DOUBLYLINKEDLIST CON UN INSERTFIST()
+            int pre = Integer.parseInt(precio);
+            cartelera.getListadoFunciones().insertFirst(p, fecha, pre);
+            cartelera.getListadoFunciones().displayList();
+            JOptionPane.showMessageDialog(vaf, "Se ha guardado la película exitosamente");
 
         }
 

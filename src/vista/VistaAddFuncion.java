@@ -24,6 +24,9 @@ public class VistaAddFuncion extends javax.swing.JFrame {
         initComponents();
         
         afc = new addFuncionController(this);
+        
+        botonCrear.setActionCommand("crear");
+        botonCrear.addActionListener(afc);
     }
 
     public JComboBox<String> getJcPeliculas() {

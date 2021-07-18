@@ -30,7 +30,7 @@ public class ClienteController implements ActionListener {
         llenarComboBox();
 
         System.out.println("abriendo Ventana Cliente");
-        stockPeliculas.getListadoPeliculas().displayForward();
+        cartelera.getListadoFunciones().displayList();
 
     }
 

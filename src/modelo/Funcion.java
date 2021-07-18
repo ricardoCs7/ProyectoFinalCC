@@ -21,11 +21,14 @@ public class Funcion {
         this.fecha = fecha;
         this.precio = precio;
     }
-    
-    public void mostrarDatos(){
-        System.out.println("Película: "+pelicula.titulo);
-        System.out.println("Fecha: " +fecha);
-        System.out.println("Precio: $"+precio);
+
+    public void mostrarDatos() {
+        System.out.println("------------------------");
+        System.out.println("Película: " + pelicula.titulo);
+        System.out.println("Fecha: " + fecha);
+        System.out.println("Precio: $" + precio);
+        System.out.println("-----------------------------");
+
     }
 
     public Pelicula getPelicula() {

@@ -8,6 +8,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.Cartelera;
+import modelo.Pelicula;
 import modelo.StockPeliculas;
 import vista.VistaAdmin;
 import vista.VistaCliente;
@@ -30,12 +31,12 @@ public class InicioController implements ActionListener {
         this.va = va;
         this.stockPeliculas = new StockPeliculas();
         this.cartelera = new Cartelera();
-        
-        
+
         stockPeliculas.getListadoPeliculas().insertFirst("Pelicula 1", "terror", "sin sinposis", 125);
-        stockPeliculas.getListadoPeliculas().insertFirst("pelicula 2", "suspenso", "sin sinopsis",200);
-      
-        
+        stockPeliculas.getListadoPeliculas().insertFirst("pelicula 2", "suspenso", "sin sinopsis", 200);
+        Pelicula p = stockPeliculas.getListadoPeliculas().find("Pelicula 1");
+        cartelera.getListadoFunciones().insertFirst(p, "21/07/2021", 3990);
+
     }
 
     @Override
@@ -49,7 +50,7 @@ public class InicioController implements ActionListener {
         if (comando == "cliente") {
             vc = new VistaCliente();
             vc.setVisible(true);
-            
+
         }
 
     }
