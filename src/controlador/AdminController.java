@@ -7,8 +7,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.Cartelera;
 import modelo.StockPeliculas;
 import modelo.DoublyLinkedList;
+import modelo.LinkList;
 import vista.VistaAddFuncion;
 import vista.VistaAddPelicula;
 import vista.VistaAdmin;
@@ -21,14 +23,17 @@ public class AdminController implements ActionListener {
 
     public VistaAdmin va;
     public VistaAddFuncion vf;
-    public StockPeliculas cartelera;
+    public StockPeliculas stockPeliculas;
     public VistaAddPelicula vp;
+    public Cartelera cartelera;
 
     public AdminController(VistaAdmin va) {
         this.va = va;
-        cartelera = InicioController.stockPeliculas; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
+        stockPeliculas = InicioController.stockPeliculas; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
         System.out.println("abriendo Ventana Admin");
-        cartelera.getListadoPeliculas().displayForward();
+        stockPeliculas.getListadoPeliculas().displayForward();
+        
+        
 
     }
 
@@ -50,11 +55,11 @@ public class AdminController implements ActionListener {
 //          
         }
         if (comando == "renovar") {
-            cartelera.getListadoPeliculas().deleteLast();
+            stockPeliculas.getListadoPeliculas().deleteLast();
             System.out.println("Se ha eliminado la última película");
         }
 
-        cartelera.getListadoPeliculas().displayForward();//IMPRIME PARA VER SI ES CORRECTA
+        stockPeliculas.getListadoPeliculas().displayForward();//IMPRIME PARA VER SI ES CORRECTA
     }
 
 }

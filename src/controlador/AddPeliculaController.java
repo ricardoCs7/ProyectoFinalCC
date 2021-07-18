@@ -18,12 +18,12 @@ import vista.VistaAddPelicula;
 public class AddPeliculaController implements ActionListener {
 
     VistaAddPelicula vap;
-    public StockPeliculas cartelera;
+    public StockPeliculas stockPeliculas;
 
     public AddPeliculaController(VistaAddPelicula vap) {
         this.vap = vap;
-        cartelera = InicioController.stockPeliculas; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
-        cartelera.getListadoPeliculas().displayForward();
+        stockPeliculas = InicioController.stockPeliculas; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
+        stockPeliculas.getListadoPeliculas().displayForward();
     }
 
     @Override
@@ -47,9 +47,9 @@ public class AddPeliculaController implements ActionListener {
 //            stockPeliculas.getLista().insertFirst(titulo, categoria, sinopsis, d);
             JOptionPane.showMessageDialog(vap, "Se ha guardado la película exitosamente");
             int d = Integer.parseInt(duracion);
-            cartelera.getListadoPeliculas().insertFirst(titulo, categoria, sinopsis, d);
+            stockPeliculas.getListadoPeliculas().insertFirst(titulo, categoria, sinopsis, d);
             limpiar();
-            cartelera.getListadoPeliculas().displayForward();
+            stockPeliculas.getListadoPeliculas().displayForward();
         }
 
     }

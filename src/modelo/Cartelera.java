@@ -10,7 +10,19 @@ package modelo;
  * @author Ricardo
  */
 public class Cartelera {
-    
-      //aqui iran las funciones creadas
-    // public static TIPO DE CODIGO (TREE, LINKLIST, CUAL ELIGEN) listadoFunciones;
+
+    public static LinkList listadoFunciones;
+
+    public Cartelera() {
+        listadoFunciones = new LinkList();
+    }
+
+    public static void setListadoFunciones(LinkList listadoFunciones) {
+        Cartelera.listadoFunciones = listadoFunciones;
+    }
+
+    public static LinkList getListadoFunciones() {
+        return listadoFunciones;
+    }
+
 }

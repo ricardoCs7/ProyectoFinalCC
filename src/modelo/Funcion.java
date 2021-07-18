@@ -13,14 +13,19 @@ public class Funcion {
 
     Pelicula pelicula;
     public String fecha;
-    public int nroEntradas;
     public int precio;
+    public Funcion next;
 
     public Funcion(Pelicula pelicula, String fecha, int precio) {
         this.pelicula = pelicula;
         this.fecha = fecha;
-
         this.precio = precio;
+    }
+    
+    public void mostrarDatos(){
+        System.out.println("Película: "+pelicula.titulo);
+        System.out.println("Fecha: " +fecha);
+        System.out.println("Precio: $"+precio);
     }
 
     public Pelicula getPelicula() {
