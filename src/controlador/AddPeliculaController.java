@@ -8,7 +8,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import modelo.Cartelera;
+import modelo.StockPeliculas;
 import vista.VistaAddPelicula;
 
 /**
@@ -18,12 +18,12 @@ import vista.VistaAddPelicula;
 public class AddPeliculaController implements ActionListener {
 
     VistaAddPelicula vap;
-    public Cartelera cartelera;
+    public StockPeliculas cartelera;
 
     public AddPeliculaController(VistaAddPelicula vap) {
         this.vap = vap;
         cartelera = InicioController.cartelera; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
-        cartelera.getListadoCartelera().displayForward();
+        cartelera.getListadoPeliculas().displayForward();
     }
 
     @Override
@@ -31,27 +31,34 @@ public class AddPeliculaController implements ActionListener {
         String comando = e.getActionCommand();
 
         String titulo = vap.getTfTitulo().getText();
+        String categoria = vap.getTfCategoria().getText();
+        String sinopsis = vap.getTaSinopsis().getText();
+        String duracion = vap.getTfDuracion().getText();
 
         if (comando == "limpiar") {
             limpiar();
         } else if (comando == "cancelar") {
             vap.dispose();
 
-        } else if (comando == "agregar" && titulo.isEmpty()) {// || categoria.isEmpty() || sinopsis.isEmpty() || duracion.isEmpty()) {
+        } else if (comando == "agregar" && titulo.isEmpty() || categoria.isEmpty() || sinopsis.isEmpty() || duracion.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
         } else {
 //            int d = Integer.parseInt(duracion);
 //            cartelera.getLista().insertFirst(titulo, categoria, sinopsis, d);
             JOptionPane.showMessageDialog(vap, "Se ha guardado la película exitosamente");
-            cartelera.getListadoCartelera().insertFirst(titulo);
+            int d = Integer.parseInt(duracion);
+            cartelera.getListadoPeliculas().insertFirst(titulo, categoria, sinopsis, d);
             limpiar();
-            cartelera.getListadoCartelera().displayForward();
+            cartelera.getListadoPeliculas().displayForward();
         }
 
     }
 
     public void limpiar() {
         vap.getTfTitulo().setText("");
+        vap.getTaSinopsis().setText("");
+        vap.getTfCategoria().setText("");
+        vap.getTfDuracion().setText("");
     }
 
 }

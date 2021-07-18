@@ -10,15 +10,16 @@ package modelo;
  * @author Ricardo
  */
 public class Funcion {
+
     Pelicula pelicula;
     public String fecha;
     public int nroEntradas;
     public int precio;
 
-    public Funcion(Pelicula pelicula, String fecha, int nroEntradas, int precio) {
+    public Funcion(Pelicula pelicula, String fecha, int precio) {
         this.pelicula = pelicula;
         this.fecha = fecha;
-        this.nroEntradas = nroEntradas;
+
         this.precio = precio;
     }
 
@@ -30,21 +31,12 @@ public class Funcion {
         this.pelicula = pelicula;
     }
 
-
     public String getFecha() {
         return fecha;
     }
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
-    }
-
-    public int getNroEntradas() {
-        return nroEntradas;
-    }
-
-    public void setNroEntradas(int nroEntradas) {
-        this.nroEntradas = nroEntradas;
     }
 
     public int getPrecio() {
@@ -54,6 +46,5 @@ public class Funcion {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-    
-    
+
 }

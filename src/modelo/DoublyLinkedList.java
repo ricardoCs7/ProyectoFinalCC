@@ -35,9 +35,9 @@ public class DoublyLinkedList {
         return current;                    // found it
     }
 
-    public void insertFirst(String titulo) // insert at front of list
+    public void insertFirst(String titulo, String categoria, String sinopsis, int duracion) // insert at front of list
     {
-        Pelicula newLink = new Pelicula(titulo);   // make new link
+        Pelicula newLink = new Pelicula(titulo, categoria, sinopsis, duracion);   // make new link
 
         if (isEmpty()) // if empty list,
         {

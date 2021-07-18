@@ -7,7 +7,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import modelo.Cartelera;
+import modelo.StockPeliculas;
 import vista.VistaAdmin;
 import vista.VistaCliente;
 import vista.VistaInicio;
@@ -21,16 +21,16 @@ public class InicioController implements ActionListener {
     public VistaInicio vi;
     public VistaAdmin va;
     public VistaCliente vc;
-    public static Cartelera cartelera;
+    public static StockPeliculas cartelera;
 
     public InicioController(VistaInicio vi, VistaAdmin va) {
         this.vi = vi;
         this.va = va;
-        this.cartelera = new Cartelera();
+        this.cartelera = new StockPeliculas();
         
         
-        cartelera.getListadoCartelera().insertFirst("pelicula 1");
-        cartelera.getListadoCartelera().insertFirst("pelicula 2");
+        cartelera.getListadoPeliculas().insertFirst("Pelicula 1", "terror", "sin sinposis", 125);
+        cartelera.getListadoPeliculas().insertFirst("pelicula 2", "suspenso", "sin sinopsis",200);
         
     }
 

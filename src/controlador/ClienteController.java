@@ -7,7 +7,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import modelo.Cartelera;
+import modelo.StockPeliculas;
 import modelo.Pelicula;
 import vista.VistaCliente;
 
@@ -18,7 +18,7 @@ import vista.VistaCliente;
 public class ClienteController implements ActionListener {
 
     VistaCliente vc;
-    public Cartelera cartelera;
+    public StockPeliculas cartelera;
 
     public ClienteController(VistaCliente vc) {
         this.vc = vc;
@@ -27,7 +27,7 @@ public class ClienteController implements ActionListener {
         llenarComboBox();
 
         System.out.println("abriendo Ventana Cliente");
-        cartelera.getListadoCartelera().displayForward();
+        cartelera.getListadoPeliculas().displayForward();
 
     }
 
@@ -40,7 +40,7 @@ public class ClienteController implements ActionListener {
         
         if (comando == "buscar") {
             
-            while (!cartelera.getListadoCartelera().isEmpty() ) {            
+            while (!cartelera.getListadoPeliculas().isEmpty() ) {            
             System.out.println(tituloSeleccionado);
         }
             
@@ -49,7 +49,7 @@ public class ClienteController implements ActionListener {
 
     public void llenarComboBox() {
 
-        Pelicula current = cartelera.getListadoCartelera().getFirst();     //Recorre la lista de peliculas
+        Pelicula current = cartelera.getListadoPeliculas().getFirst();     //Recorre la lista de peliculas
         while (current != null) // until end of list,
         {
             vc.getJcPeliculas().addItem(current.getTitulo());// La pelicula es insertada en en comboBox 

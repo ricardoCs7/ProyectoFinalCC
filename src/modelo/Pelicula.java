@@ -12,11 +12,18 @@ package modelo;
 public class Pelicula {
 
     public String titulo;
+    public String categoria;
+    public String sinopsis;
+    public int duracion;
     public Pelicula next;
     public Pelicula previous;
 
-    public Pelicula(String titulo) {
+    public Pelicula(String titulo, String categoria, String sinopsis, int duracion) {
         this.titulo = titulo;
+        this.categoria = categoria;
+        this.sinopsis = sinopsis;
+        this.duracion = duracion;
+
     }
 
     public String getTitulo() {
@@ -26,9 +33,9 @@ public class Pelicula {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    
-    public void mostrarDatos(){
-        System.out.println("Título: "+titulo);
+
+    public void mostrarDatos() {
+        System.out.println("Título: " + titulo);
     }
 
     public Pelicula getNext() {
@@ -46,7 +53,29 @@ public class Pelicula {
     public void setPrevious(Pelicula previous) {
         this.previous = previous;
     }
-    
-    
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getSinopsis() {
+        return sinopsis;
+    }
+
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
+    }
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
 
 }

@@ -10,23 +10,7 @@ package modelo;
  * @author Ricardo
  */
 public class Cartelera {
-
-    public static DoublyLinkedList listadoCartelera;
-
-    public Cartelera() {
-        
-        this.listadoCartelera = new DoublyLinkedList();
-    }
-
-    public static DoublyLinkedList getListadoCartelera() {
-        return listadoCartelera;
-    }
-
-    public static void setListadoCartelera(DoublyLinkedList listadoCartelera) {
-        Cartelera.listadoCartelera = listadoCartelera;
-    }
-
-   
     
-
+      //aqui iran las funciones creadas
+    // public static TIPO DE CODIGO (TREE, LINKLIST, CUAL ELIGEN) listadoFunciones;
 }
