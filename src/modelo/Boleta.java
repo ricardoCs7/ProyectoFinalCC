@@ -10,7 +10,7 @@ package modelo;
  * @author Ricardo
  */
 public class Boleta {
-    
+
     public Funcion funcion;
     public int nroAsientos;
     public int total;
@@ -18,7 +18,7 @@ public class Boleta {
     public Boleta(Funcion funcion, int nroAsientos) {
         this.funcion = funcion;
         this.nroAsientos = nroAsientos;
-        this.total= funcion.precio*nroAsientos;
+        this.total = funcion.precio * nroAsientos;
     }
 
     public Funcion getFuncion() {
@@ -44,15 +44,5 @@ public class Boleta {
     public void setTotal(int total) {
         this.total = total;
     }
-    
-    
-    
-    
-    
-    
 
-    
-    
-    
-    
 }
