@@ -21,16 +21,16 @@ public class InicioController implements ActionListener {
     public VistaInicio vi;
     public VistaAdmin va;
     public VistaCliente vc;
-    public static StockPeliculas cartelera;
+    public static StockPeliculas stockPeliculas;
 
     public InicioController(VistaInicio vi, VistaAdmin va) {
         this.vi = vi;
         this.va = va;
-        this.cartelera = new StockPeliculas();
+        this.stockPeliculas = new StockPeliculas();
         
         
-        cartelera.getListadoPeliculas().insertFirst("Pelicula 1", "terror", "sin sinposis", 125);
-        cartelera.getListadoPeliculas().insertFirst("pelicula 2", "suspenso", "sin sinopsis",200);
+        stockPeliculas.getListadoPeliculas().insertFirst("Pelicula 1", "terror", "sin sinposis", 125);
+        stockPeliculas.getListadoPeliculas().insertFirst("pelicula 2", "suspenso", "sin sinopsis",200);
         
     }
 

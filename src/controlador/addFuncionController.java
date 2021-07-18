@@ -23,7 +23,7 @@ public class addFuncionController implements ActionListener {
 
     public addFuncionController(VistaAddFuncion vaf) {
         this.vaf = vaf;
-        this.cartelera = InicioController.cartelera;
+        this.cartelera = InicioController.stockPeliculas;
         llenarComboBox();
 
     }

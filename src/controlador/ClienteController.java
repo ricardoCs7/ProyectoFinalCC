@@ -22,7 +22,7 @@ public class ClienteController implements ActionListener {
 
     public ClienteController(VistaCliente vc) {
         this.vc = vc;
-        this.cartelera = InicioController.cartelera;
+        this.cartelera = InicioController.stockPeliculas;
 
         llenarComboBox();
 

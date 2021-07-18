@@ -22,7 +22,7 @@ public class AddPeliculaController implements ActionListener {
 
     public AddPeliculaController(VistaAddPelicula vap) {
         this.vap = vap;
-        cartelera = InicioController.cartelera; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
+        cartelera = InicioController.stockPeliculas; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
         cartelera.getListadoPeliculas().displayForward();
     }
 
@@ -44,7 +44,7 @@ public class AddPeliculaController implements ActionListener {
             JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios", "Campos Vacíos", JOptionPane.WARNING_MESSAGE);
         } else {
 //            int d = Integer.parseInt(duracion);
-//            cartelera.getLista().insertFirst(titulo, categoria, sinopsis, d);
+//            stockPeliculas.getLista().insertFirst(titulo, categoria, sinopsis, d);
             JOptionPane.showMessageDialog(vap, "Se ha guardado la película exitosamente");
             int d = Integer.parseInt(duracion);
             cartelera.getListadoPeliculas().insertFirst(titulo, categoria, sinopsis, d);

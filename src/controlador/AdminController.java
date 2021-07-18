@@ -26,7 +26,7 @@ public class AdminController implements ActionListener {
 
     public AdminController(VistaAdmin va) {
         this.va = va;
-        cartelera = InicioController.cartelera; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
+        cartelera = InicioController.stockPeliculas; //OBTIENE LAS PELICULAS QUE HAY EN LA CARTELERA
         System.out.println("abriendo Ventana Admin");
         cartelera.getListadoPeliculas().displayForward();
 
