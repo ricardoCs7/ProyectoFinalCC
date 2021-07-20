@@ -55,4 +55,12 @@ public class Funcion {
         this.precio = precio;
     }
 
+    public Funcion getNext() {
+        return next;
+    }
+
+    public void setNext(Funcion next) {
+        this.next = next;
+    }
+
 }

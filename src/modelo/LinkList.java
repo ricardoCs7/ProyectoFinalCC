@@ -15,6 +15,13 @@ public class LinkList {
     }
 // -------------------------------------------------------------
 
+    public Funcion getFirst() {
+        return first;
+    }
+
+    
+   
+    
     public boolean isEmpty() // true if list is empty
     {
         return (first == null);
@@ -26,6 +33,22 @@ public class LinkList {
         Funcion newLink = new Funcion(pelicula, fecha, precio);
         newLink.next = first;       // newLink --> old first
         first = newLink;            // first --> newLink
+    }
+    
+    public Funcion find(String key) // find link with given key
+    {                           // (assumes non-empty list)
+        Funcion current = first;              // start at 'first'
+        while (current.pelicula.titulo != key) // while no match,
+        {
+            if (current.next == null) // if end of list,
+            {
+                return null;                 // didn't find it
+            } else // not end of list,
+            {
+                current = current.next;      // go to next link
+            }
+        }
+        return current;                    // found it
     }
 // -------------------------------------------------------------
 
@@ -47,6 +70,8 @@ public class LinkList {
         }
         System.out.println("");
     }
+
+   
 // -------------------------------------------------------------
 }  // end class LinkList
 ////////////////////////////////////////////////////////////////

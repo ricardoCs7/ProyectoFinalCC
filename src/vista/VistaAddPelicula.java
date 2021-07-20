@@ -87,6 +87,7 @@ public class VistaAddPelicula extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Agregar Una Nueva Película");
 
         botonAgregar.setText("Agregar");
         botonAgregar.setActionCommand("\"aceptar\"");

@@ -45,7 +45,7 @@ public class AddPeliculaController implements ActionListener {
         } else {
 //            int d = Integer.parseInt(duracion);
 //            stockPeliculas.getLista().insertFirst(titulo, categoria, sinopsis, d);
-            JOptionPane.showMessageDialog(vap, "Se ha guardado la película exitosamente");
+            JOptionPane.showMessageDialog(vap, "Se ha añadido la película exitosamente");
             int d = Integer.parseInt(duracion);
             stockPeliculas.getListadoPeliculas().insertFirst(titulo, categoria, sinopsis, d);
             limpiar();

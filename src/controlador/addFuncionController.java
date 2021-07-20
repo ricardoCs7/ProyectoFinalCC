@@ -54,6 +54,7 @@ public class addFuncionController implements ActionListener {
             cartelera.getListadoFunciones().insertFirst(p, fecha, pre);
             cartelera.getListadoFunciones().displayList();
             JOptionPane.showMessageDialog(vaf, "Se ha guardado la película exitosamente");
+            limpiar();
 
         }
 
@@ -67,5 +68,11 @@ public class addFuncionController implements ActionListener {
             current = current.next; //pasa a la siguiente pelicula
         }
 
+    }
+    
+    
+    public void limpiar(){
+        vaf.getTfFecha().setText("");
+        vaf.getTfPrecio().setText("");
     }
 }

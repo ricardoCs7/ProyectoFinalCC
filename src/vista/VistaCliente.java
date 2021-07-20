@@ -17,11 +17,17 @@ public class VistaCliente extends javax.swing.JFrame {
     /**
      * Creates new form VistaCliente
      */
-    ClienteController cc ;
+    public ClienteController cc ;
+    
     public VistaCliente() {
         initComponents();
         setLocationRelativeTo(null);
         cc= new ClienteController(this);
+        
+        botonCartelera.setActionCommand("buscar");
+        botonCarteleraCompleta.setActionCommand("completa");
+        botonCarteleraCompleta.addActionListener(cc);
+        botonCartelera.addActionListener(cc);
         
     }
 
@@ -44,8 +50,8 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jcPeliculas = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         botonCartelera = new javax.swing.JButton();
+        botonCarteleraCompleta = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -59,9 +65,9 @@ public class VistaCliente extends javax.swing.JFrame {
 
         jLabel1.setText("Seleccione la película:");
 
-        jButton1.setText("Ver Funciones Disponibles");
+        botonCartelera.setText("Ver Funciones Disponibles");
 
-        botonCartelera.setText("Ver toda la Cartelera");
+        botonCarteleraCompleta.setText("Ver toda la Cartelera");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,18 +79,17 @@ public class VistaCliente extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jcPeliculas, 0, 152, Short.MAX_VALUE)
                 .addGap(27, 27, 27))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(127, 127, 127)
-                        .addComponent(botonCartelera, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botonCarteleraCompleta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(botonCartelera, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,11 +100,11 @@ public class VistaCliente extends javax.swing.JFrame {
                     .addComponent(jcPeliculas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonCartelera, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
-                .addComponent(botonCartelera, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonCarteleraCompleta, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -147,7 +152,7 @@ public class VistaCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonCartelera;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botonCarteleraCompleta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JComboBox<String> jcPeliculas;

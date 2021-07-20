@@ -7,9 +7,13 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTable;
 import modelo.Cartelera;
+import modelo.Funcion;
 import modelo.StockPeliculas;
 import modelo.Pelicula;
+import vista.VistaCartelera;
+import vista.VistaCarteleraCompleta;
 import vista.VistaCliente;
 
 /**
@@ -18,7 +22,9 @@ import vista.VistaCliente;
  */
 public class ClienteController implements ActionListener {
 
-    VistaCliente vc;
+    public VistaCliente vc;
+    public VistaCartelera vCart;
+    public VistaCarteleraCompleta vCComp;
     public StockPeliculas stockPeliculas;
     public Cartelera cartelera;
 
@@ -36,18 +42,16 @@ public class ClienteController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-                
-        String comando  = e.getActionCommand();
-        String tituloSeleccionado = (String) vc.getJcPeliculas().getSelectedItem(); //se toma el titulo seleccionado de la lista del jComboBox
-        
-        
-        if (comando == "buscar") {
-            
-            while (stockPeliculas.getListadoPeliculas().isEmpty() || cartelera.getListadoFunciones().isEmpty() ) {            
-                System.out.println(tituloSeleccionado);
-            cartelera.getListadoFunciones().displayList();
+
+        String comando = e.getActionCommand();
+
+        if (comando == "completa") {
+            vCComp = new VistaCarteleraCompleta();
+            vCComp.setVisible(true);
+
         }
-            
+        if (comando == "buscar") {
+
         }
     }
 
