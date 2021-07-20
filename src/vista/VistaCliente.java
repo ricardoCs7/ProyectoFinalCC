@@ -35,10 +35,6 @@ public class VistaCliente extends javax.swing.JFrame {
         return jcPeliculas;
     }
 
-    public void setJcPeliculas(JComboBox<String> jcPeliculas) {
-        this.jcPeliculas = jcPeliculas;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,7 +44,6 @@ public class VistaCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jcPeliculas = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         botonCartelera = new javax.swing.JButton();
         botonCarteleraCompleta = new javax.swing.JButton();
@@ -155,6 +150,6 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JButton botonCarteleraCompleta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JComboBox<String> jcPeliculas;
+    public static final javax.swing.JComboBox<String> jcPeliculas = new javax.swing.JComboBox<>();
     // End of variables declaration//GEN-END:variables
 }

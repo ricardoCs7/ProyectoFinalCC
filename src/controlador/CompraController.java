@@ -44,6 +44,7 @@ public class CompraController implements ActionListener {
             vb = new VistaBoleta();
             vb.setVisible(true);
             rellenarBoleta();
+            vc.dispose();
         }
         if (comando == "cancelar") {
             vc.dispose();

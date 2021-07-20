@@ -41,6 +41,7 @@ public class InicioController implements ActionListener {
 
         cartelera.getListadoFunciones().insertFirst(p, "21/07/2021", 3990);
         cartelera.getListadoFunciones().insertFirst(p2, "22/07/2021", 4990);
+        cartelera.getListadoFunciones().insertFirst(p2, "25/07/2021", 5900);
 
     }
 

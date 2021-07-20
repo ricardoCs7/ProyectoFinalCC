@@ -5,9 +5,11 @@
  */
 package controlador;
 
+import static controlador.CarteleraCompletaController.tablaCarteleraCompleta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import modelo.Cartelera;
 import modelo.Funcion;
 import modelo.StockPeliculas;
@@ -27,6 +29,7 @@ public class ClienteController implements ActionListener {
     public VistaCarteleraCompleta vCComp;
     public StockPeliculas stockPeliculas;
     public Cartelera cartelera;
+    public CarteleraController cartControl;
 
     public ClienteController(VistaCliente vc) {
         this.vc = vc;
@@ -51,6 +54,9 @@ public class ClienteController implements ActionListener {
 
         }
         if (comando == "buscar") {
+            vCart = new VistaCartelera();
+            vCart.setVisible(true);
+            llenarCartelera();
 
         }
     }
@@ -64,6 +70,35 @@ public class ClienteController implements ActionListener {
             current = current.next; //pasa a la siguiente pelicula
         }
 
+    }
+
+    // METODO PARA LLENAR LA CARTELERA SEGUN LA PELICULA DE LA LISTA, EN LA VISTA CLIENTE
+    public void llenarCartelera() {
+
+        String peli = (String) vc.getJcPeliculas().getSelectedItem();
+        Funcion f = cartelera.listadoFunciones.find(peli); //ENCUENTRA LA PELICULA SEGUN EL JCOMBOBOX
+        Funcion current = cartelera.listadoFunciones.getFirst();
+
+        tablaCarteleraCompleta = (DefaultTableModel) vCart.getTabla().getModel();
+
+        while (current != null && f != null)// until end of list,
+        {
+
+            String[] func = {String.valueOf(f.getPelicula().titulo),
+                String.valueOf(f.fecha.toString()),
+                String.valueOf(f.precio)};
+
+            if (!current.equals(f)) {
+                f.getPelicula();
+                tablaCarteleraCompleta.addRow(func); //AGREGA LOS DATOS DE LA FUNCION A LA TABLA
+                f = f.next;
+                
+            } else {
+
+            }
+            current = current.next;
+
+        }
     }
 
 }

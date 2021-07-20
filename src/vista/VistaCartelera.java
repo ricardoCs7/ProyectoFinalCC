@@ -24,6 +24,7 @@ public class VistaCartelera extends javax.swing.JFrame {
 
     public VistaCartelera() {
         initComponents();
+
         cc = new CarteleraController(this);
         setLocationRelativeTo(null);
 
@@ -33,15 +34,18 @@ public class VistaCartelera extends javax.swing.JFrame {
         Font bigFont = new Font("sansserif", Font.PLAIN, 15); // or whatever
         tabla.getTableHeader().setFont(bigFont);
 
-    }
+        botonCancelar.setActionCommand("cancelar");
+        botonCancelar.addActionListener(cc);
+        botonSeleccionar.setActionCommand("seleccionar");
+        botonSeleccionar.addActionListener(cc);
+   
+}
 
-    public JTable getTabla() {
+public JTable getTabla() {
         return tabla;
     }
 
-    public void setTabla(JTable tabla) {
-        this.tabla = tabla;
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,7 +60,6 @@ public class VistaCartelera extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabla = new javax.swing.JTable();
         botonSeleccionar = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
 
@@ -87,17 +90,16 @@ public class VistaCartelera extends javax.swing.JFrame {
             }
         });
         tabla.setToolTipText("");
-        tabla.setColumnSelectionAllowed(true);
         jScrollPane1.setViewportView(tabla);
-        tabla.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        if (tabla.getColumnModel().getColumnCount() > 0) {
-            tabla.getColumnModel().getColumn(0).setResizable(false);
-            tabla.getColumnModel().getColumn(2).setHeaderValue("Precio");
-        }
 
         botonSeleccionar.setText("Seleccionar");
 
         botonCancelar.setText("Cancelar");
+        botonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,6 +132,10 @@ public class VistaCartelera extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
+      this.dispose();
+    }//GEN-LAST:event_botonCancelarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -144,16 +150,28 @@ public class VistaCartelera extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+                
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaCartelera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaCartelera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaCartelera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaCartelera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCartelera.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VistaCartelera.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VistaCartelera.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VistaCartelera.class
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -171,6 +189,6 @@ public class VistaCartelera extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabla;
+    public static final javax.swing.JTable tabla = new javax.swing.JTable();
     // End of variables declaration//GEN-END:variables
 }

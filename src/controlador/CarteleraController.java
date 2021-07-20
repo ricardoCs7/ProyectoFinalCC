@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import static controlador.CarteleraCompletaController.tablaCarteleraCompleta;
 import static controlador.InicioController.cartelera;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,7 +26,7 @@ public class CarteleraController implements ActionListener {
     VistaCompra vCompra;
     Cartelera cartelera;
     VistaCliente vCliente;
-   
+    public static DefaultTableModel tablaCartelera;
 
     public CarteleraController(VistaCartelera vc) {
         this.vCart = vCart;
@@ -33,37 +34,23 @@ public class CarteleraController implements ActionListener {
         this.vCliente = vCliente;
     }
 
-    public void llenarTabla() {
-
-        DefaultTableModel tabla = (DefaultTableModel) vCart.getTabla().getModel();
-      
-
-        Funcion current = cartelera.listadoFunciones.find("");
-        while (current != null) // until end of list,
-        {
-            String[] f = {String.valueOf(current.getPelicula().titulo),
-                String.valueOf(current.fecha.toString()),
-                String.valueOf(current.precio)};
-            tabla.addRow(f);
-            // SE VA RELLENANDO LA TABLA CON LAS FUNCIONES EXISTENTES
-            current = current.next; //PASA A LA SIGUIENTE FUNCION
-        }
-    }
-
     @Override
     public void actionPerformed(ActionEvent ae) {
         String comando = ae.getActionCommand();
 
-        if (comando == "comprar") {
-            
+        if (comando == "seleccionar") {
             vCompra = new VistaCompra();
             vCompra.setVisible(true);
-
-        }
-        if (comando == "cancelar") {
-            vCart.dispose();
-
+            rellenarVistaCompra();
         }
     }
 
+      public void rellenarVistaCompra() {
+        
+        String item = String.valueOf(tablaCartelera.getValueAt(VistaCartelera.tabla.getSelectedRow(), 0));
+          
+          System.out.println(item);  
+          
+    }
+      
 }

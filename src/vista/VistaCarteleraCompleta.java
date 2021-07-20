@@ -26,6 +26,7 @@ public class VistaCarteleraCompleta extends javax.swing.JFrame {
         initComponents();
         ccc = new CarteleraCompletaController(this);
         setLocationRelativeTo(null);
+
         TableCellRenderer defaultRenderer = tabla.getTableHeader().getDefaultRenderer();
         ((DefaultTableCellRenderer) tabla.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -36,7 +37,7 @@ public class VistaCarteleraCompleta extends javax.swing.JFrame {
         botonSeleccionar.setActionCommand("seleccionar");
         botonCancelar.addActionListener(ccc);
         botonSeleccionar.addActionListener(ccc);
-        
+
     }
 
     public JTable getTabla() {
@@ -93,6 +94,11 @@ public class VistaCarteleraCompleta extends javax.swing.JFrame {
         botonSeleccionar.setText("Seleccionar");
 
         botonCancelar.setText("Cancelar");
+        botonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,6 +128,10 @@ public class VistaCarteleraCompleta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCancelarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -45,12 +45,9 @@ public class CarteleraCompletaController implements ActionListener {
 
         if (comando == "salir") {
             vcc.dispose();
-        }
-
-        if (comando == "seleccionar" && item == null) {
+        } else if (comando == "seleccionar" && item == null) {
             JOptionPane.showMessageDialog(null, "Favor seleccione una película", "Error", JOptionPane.WARNING_MESSAGE);
-        }
-        if (comando == "seleccionar" && item != null) {
+        } else if (comando == "seleccionar" && item != null) {
             vCompra = new VistaCompra();
             vCompra.setVisible(true);
             rellenar();
@@ -62,23 +59,20 @@ public class CarteleraCompletaController implements ActionListener {
         tablaCarteleraCompleta = (DefaultTableModel) vcc.tabla.getModel();
 
         Funcion current = InicioController.cartelera.listadoFunciones.getFirst();
-        
+
         while (current != null) // until end of list,
         {
             String[] f = {String.valueOf(current.getPelicula().titulo),
                 String.valueOf(current.fecha.toString()),
                 String.valueOf(current.precio)};
             tablaCarteleraCompleta.addRow(f); //AGREGA LOS DATOS DE LA FUNCION A LA TABLA
-            
             current = current.next;
-
         }
     }
 
     public void rellenar() {
         String item = String.valueOf(tablaCarteleraCompleta.getValueAt(vcc.tabla.getSelectedRow(), 0));
         Funcion f = cartelera.listadoFunciones.find(item);
-        
 
         String t = f.getPelicula().titulo;
         String c = f.getPelicula().categoria;
@@ -86,7 +80,6 @@ public class CarteleraCompletaController implements ActionListener {
         String d = String.valueOf(f.getPelicula().duracion);
         String fecha = f.fecha;
         String p = String.valueOf(f.precio);
-        
 
         vCompra.getJlTitulo().setText(t);
         vCompra.getJlCategoria().setText(c);
@@ -135,6 +128,5 @@ public class CarteleraCompletaController implements ActionListener {
     public void setCartController(CompraController cartController) {
         this.cartController = cartController;
     }
-    
-    
+
 }
