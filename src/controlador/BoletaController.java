@@ -5,8 +5,12 @@
  */
 package controlador;
 
+import static controlador.CarteleraCompletaController.tablaCarteleraCompleta;
+import static controlador.InicioController.cartelera;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.table.DefaultTableModel;
+import modelo.Funcion;
 import vista.VistaBoleta;
 import vista.VistaCompra;
 
@@ -17,23 +21,19 @@ import vista.VistaCompra;
 public class BoletaController implements ActionListener {
 
     VistaCompra vc;
-    VistaBoleta bv;
+    VistaBoleta vb;
+    
 
-    public BoletaController(VistaCompra vc, VistaBoleta bv) {
-        this.vc = vc;
-        this.bv = bv;
-       
-    }
+    public BoletaController(VistaBoleta bv) {
 
-
-
-    public void rellenar() {
+        this.vb = bv;
 
     }
 
+    
     @Override
     public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
 }

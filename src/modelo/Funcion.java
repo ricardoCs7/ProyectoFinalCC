@@ -15,6 +15,7 @@ public class Funcion {
     public String fecha;
     public int precio;
     public Funcion next;
+   
 
     public Funcion(Pelicula pelicula, String fecha, int precio) {
         this.pelicula = pelicula;
@@ -30,6 +31,8 @@ public class Funcion {
         System.out.println("-----------------------------");
 
     }
+    
+   
 
     public Pelicula getPelicula() {
         return pelicula;

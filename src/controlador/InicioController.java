@@ -32,10 +32,15 @@ public class InicioController implements ActionListener {
         this.stockPeliculas = new StockPeliculas();
         this.cartelera = new Cartelera();
 
-        stockPeliculas.getListadoPeliculas().insertFirst("Pelicula 1", "terror", "sin sinposis", 125);
-        stockPeliculas.getListadoPeliculas().insertFirst("pelicula 2", "suspenso", "sin sinopsis", 200);
-        Pelicula p = stockPeliculas.getListadoPeliculas().find("Pelicula 1");
+        stockPeliculas.getListadoPeliculas().insertFirst("Rápido y Furioso 9", "Acción", "FAMILIA", 5900);
+        stockPeliculas.getListadoPeliculas().insertFirst("Black Widow", "Acción", "Una peligrosa conspiración, relacionada con su pasado, persigue a "
+                + "Natasha Romanoff, también conocida como Viuda Negra. La agente tendrá que lidiar con las consecuencias de haber sido espía, así "
+                + "como con las relaciones rotas, para sobrevivir.", 200);
+        Pelicula p = stockPeliculas.getListadoPeliculas().find("Rápido y Furioso 9");
+        Pelicula p2 = stockPeliculas.getListadoPeliculas().find("Black Widow");
+
         cartelera.getListadoFunciones().insertFirst(p, "21/07/2021", 3990);
+        cartelera.getListadoFunciones().insertFirst(p2, "22/07/2021", 4990);
 
     }
 

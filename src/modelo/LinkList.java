@@ -19,22 +19,14 @@ public class LinkList {
         return first;
     }
 
-    
-   
-    
-    public boolean isEmpty() // true if list is empty
-    {
-        return (first == null);
-    }
 // -------------------------------------------------------------
     // insert at start of list
-
     public void insertFirst(Pelicula pelicula, String fecha, int precio) {                           // make new link
         Funcion newLink = new Funcion(pelicula, fecha, precio);
         newLink.next = first;       // newLink --> old first
         first = newLink;            // first --> newLink
     }
-    
+
     public Funcion find(String key) // find link with given key
     {                           // (assumes non-empty list)
         Funcion current = first;              // start at 'first'
@@ -71,7 +63,6 @@ public class LinkList {
         System.out.println("");
     }
 
-   
 // -------------------------------------------------------------
 }  // end class LinkList
 ////////////////////////////////////////////////////////////////

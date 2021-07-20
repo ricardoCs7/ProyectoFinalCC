@@ -20,12 +20,11 @@ public class VistaBoleta extends javax.swing.JFrame {
      */
     
     BoletaController bc;
-    VistaCompra vc;
     
     public VistaBoleta() {
         initComponents();
         setLocationRelativeTo(null);
-        bc = new BoletaController(vc, this);
+        bc = new BoletaController( this);
         
         
     }
@@ -38,13 +37,7 @@ public class VistaBoleta extends javax.swing.JFrame {
         this.bc = bc;
     }
 
-    public VistaCompra getVc() {
-        return vc;
-    }
-
-    public void setVc(VistaCompra vc) {
-        this.vc = vc;
-    }
+  
 
     public JLabel getBOLETA() {
         return BOLETA;
@@ -176,7 +169,7 @@ public class VistaBoleta extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Boleta Electrónica");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
         jLabel2.setText("Total :            $");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
@@ -194,7 +187,7 @@ public class VistaBoleta extends javax.swing.JFrame {
         BOLETA.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         BOLETA.setText("BOLETA ELECTRONICA");
 
-        jlTotal.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jlTotal.setFont(new java.awt.Font("Segoe UI Black", 0, 16)); // NOI18N
         jlTotal.setText("jLabel8");
 
         jSeparator1.setBackground(new java.awt.Color(102, 255, 102));
@@ -231,9 +224,6 @@ public class VistaBoleta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(BOLETA))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -254,7 +244,10 @@ public class VistaBoleta extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(208, 208, 208)
-                        .addComponent(botonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(BOLETA)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

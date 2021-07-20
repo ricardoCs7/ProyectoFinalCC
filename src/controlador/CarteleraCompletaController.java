@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Cartelera;
 import modelo.Funcion;
 import modelo.LinkList;
+import vista.VistaBoleta;
 import vista.VistaCarteleraCompleta;
 import vista.VistaCompra;
 
@@ -24,6 +25,8 @@ public class CarteleraCompletaController implements ActionListener {
     VistaCarteleraCompleta vcc;
     Cartelera cartelera;
     VistaCompra vCompra;
+    Funcion currenFuncion;
+    VistaBoleta boleta;
 
     public static DefaultTableModel tablaCarteleraCompleta;
     CompraController cartController;
@@ -75,6 +78,7 @@ public class CarteleraCompletaController implements ActionListener {
     public void rellenar() {
         String item = String.valueOf(tablaCarteleraCompleta.getValueAt(vcc.tabla.getSelectedRow(), 0));
         Funcion f = cartelera.listadoFunciones.find(item);
+        
 
         String t = f.getPelicula().titulo;
         String c = f.getPelicula().categoria;
@@ -82,11 +86,55 @@ public class CarteleraCompletaController implements ActionListener {
         String d = String.valueOf(f.getPelicula().duracion);
         String fecha = f.fecha;
         String p = String.valueOf(f.precio);
+        
 
         vCompra.getJlTitulo().setText(t);
         vCompra.getJlCategoria().setText(c);
         vCompra.getJlFecha().setText(fecha);
         vCompra.getJlDuracion().setText(d);
         vCompra.getJtSinopsis().setText(s);
+        vCompra.getJlPrecio().setText(p);
     }
+
+    public VistaCarteleraCompleta getVcc() {
+        return vcc;
+    }
+
+    public void setVcc(VistaCarteleraCompleta vcc) {
+        this.vcc = vcc;
+    }
+
+    public Cartelera getCartelera() {
+        return cartelera;
+    }
+
+    public void setCartelera(Cartelera cartelera) {
+        this.cartelera = cartelera;
+    }
+
+    public VistaCompra getvCompra() {
+        return vCompra;
+    }
+
+    public void setvCompra(VistaCompra vCompra) {
+        this.vCompra = vCompra;
+    }
+
+    public static DefaultTableModel getTablaCarteleraCompleta() {
+        return tablaCarteleraCompleta;
+    }
+
+    public static void setTablaCarteleraCompleta(DefaultTableModel tablaCarteleraCompleta) {
+        CarteleraCompletaController.tablaCarteleraCompleta = tablaCarteleraCompleta;
+    }
+
+    public CompraController getCartController() {
+        return cartController;
+    }
+
+    public void setCartController(CompraController cartController) {
+        this.cartController = cartController;
+    }
+    
+    
 }

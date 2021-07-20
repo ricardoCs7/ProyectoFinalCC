@@ -36,6 +36,7 @@ public class VistaCarteleraCompleta extends javax.swing.JFrame {
         botonSeleccionar.setActionCommand("seleccionar");
         botonCancelar.addActionListener(ccc);
         botonSeleccionar.addActionListener(ccc);
+        
     }
 
     public JTable getTabla() {
